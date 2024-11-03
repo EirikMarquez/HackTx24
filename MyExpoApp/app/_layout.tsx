@@ -3,7 +3,8 @@ import { Stack } from 'expo-router';
 
 const Layout = () => (
 	<Stack>
-		<Stack.Screen name="index" options={{ title: 'HomePage' }} />
+		<Stack.Screen name="index" options={{ title: 'Traverse' }} />
+        <Stack.Screen name="profile" options={{ title: 'Profile' }} />
 	</Stack>
 );
 

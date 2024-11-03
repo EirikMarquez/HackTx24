@@ -13,5 +13,12 @@ export const markers = [
 		latitudeDelta: 0.01,
 		longitudeDelta: 0.01,
 		name: 'Texas State Capitol'
+	},
+	{
+		latitude: 44.342958853945845,
+		latitudeDelta: 3.6563671301220566, 
+		longitude: -88.06308014318347,
+		longitudeDelta: 2.5972409918904305,
+		name: '500 Points waiting for you'
 	}
 ];

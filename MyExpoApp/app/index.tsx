@@ -3,7 +3,7 @@ import MapView, { Callout, Marker, PROVIDER_GOOGLE, Region } from 'react-native-
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from 'expo-router';
 import { markers } from '../assets/markers';
-
+import { Navbar } from '../components/Navbar';
 
 
 const INITIAL_REGION = {
@@ -13,6 +13,21 @@ const INITIAL_REGION = {
 	longitudeDelta: 2
 };
 
+const styles = StyleSheet.create({
+  navbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
+    backgroundColor: 'white',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  navButton: {
+    padding: 10,
+  },
+});
 
 export default function App() {
 	const mapRef = useRef<any>(null);
@@ -31,15 +46,17 @@ export default function App() {
 	}, []);
 
 	const focusMap = () => {
-		const GreenBayStadium = {
-			latitude: 44.5013,
-			longitude: -88.0622,
+        // Austin, TX
+        // #TODO: Get user location and use it instead of hardcoded location
+        const userLocation = {
+			latitude: 30.2672,
+			longitude: -97.7431,
 			latitudeDelta: 0.1,
 			longitudeDelta: 0.1
 		};
 
-		mapRef.current?.animateToRegion(GreenBayStadium);
-		// mapRef.current?.animateCamera({ center: GreenBayStadium, zoom: 10 }, { duration: 2000 });
+		mapRef.current?.animateToRegion(userLocation);
+		mapRef.current?.animateCamera({ center: userLocation, zoom: 14 }, { duration: 2000 });
 	};
 
 	const onMarkerSelected = (marker: any) => {
@@ -74,12 +91,31 @@ export default function App() {
 					>
 						<Callout onPress={calloutPressed}>
 							<View style={{ padding: 10 }}>
-								<Text style={{ fontSize: 24 }}>Hello</Text>
+								<Text style={{ fontSize: 12 }}>{marker.name}</Text>
 							</View>
 						</Callout>
 					</Marker>
 				))}
 			</MapView>
+
+            {/* Navbar */}
+            {/* <Navbar /> */}
+
+            <View style={styles.navbar}>
+            <TouchableOpacity style={styles.navButton}>
+                <Text>Location</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.navButton}>
+                <Text>Explore</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.navButton}>
+                <Text>Camera</Text>
+            </TouchableOpacity>
+                <TouchableOpacity style={styles.navButton}>
+                    <Text>Profile</Text>
+                </TouchableOpacity>
+            </View>
+
 		</View>
 	);
 }
