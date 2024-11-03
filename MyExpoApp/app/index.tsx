@@ -35,11 +35,11 @@ export default function App() {
 	const mapRef = useRef<any>(null);
 	const navigation = useNavigation();
 
-    // Add this new useEffect for initial focus
-    useEffect(() => {
-        // Small delay to ensure map is loaded
-        setTimeout(focusMap, 100);
-    }, []);
+	// Add this new useEffect for initial focus
+	useEffect(() => {
+		// Small delay to ensure map is loaded
+		setTimeout(focusMap, 100);
+	}, []);
 
 	useEffect(() => {
 		navigation.setOptions({
