@@ -1,9 +1,39 @@
-import { Stack } from "expo-router";
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
 
-export default function RootLayout() {
+export default function App() {
   return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
+    <View style={styles.container}>
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 30.266666,
+          longitude: -97.733330,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      >
+        <Marker
+          coordinate={{
+            latitude: 30.266666,
+            longitude:  -97.733330,
+          }}
+          title="My Location"
+          description="This is a marker in San Francisco"
+        />
+      </MapView>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  map: {
+    width: '100%',
+    height: '100%',
+  },
+});
