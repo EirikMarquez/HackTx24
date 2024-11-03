@@ -6,10 +6,11 @@ interface CardProps {
   description?: string;
   image?: string;
   distance?: string;
+  points?: number;
   onPress?: () => void;
 }
 
-export function Card({ name, description, image, distance, onPress }: CardProps) {
+export function Card({ name, description, image, distance, points, onPress }: CardProps) {
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>
       <View style={styles.imageContainer}>
@@ -30,6 +31,10 @@ export function Card({ name, description, image, distance, onPress }: CardProps)
         {distance && (
           <Text style={styles.distance}>{distance}</Text>
         )}
+        {points !== undefined && (
+          <Text style={styles.points}>{points} points</Text>
+        )}
+        
       </View>
     </TouchableOpacity>
   );
@@ -39,7 +44,8 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: 'white',
     borderRadius: 12,
-    marginHorizontal: 16,
+    width: '95%',
+    alignSelf: 'center',
     marginVertical: 8,
     flexDirection: 'row',
     elevation: 3,
@@ -80,5 +86,11 @@ const styles = StyleSheet.create({
   distance: {
     fontSize: 12,
     color: '#888',
+  },
+  points: {
+    fontSize: 12,
+    color: '#2E7D32',
+    fontWeight: '500',
+    marginTop: 2,
   },
 });

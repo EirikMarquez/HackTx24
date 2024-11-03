@@ -8,7 +8,8 @@ export const markers = [
 		name: 'Downtown Austin',
 		points: 100,
 		description: 'Find the best tacos in Austin',
-		completed: false
+		completed: false,
+		image: '../assets/images/react-logo.png'
 	},
 	{
 		latitude: 30.2742,
@@ -18,7 +19,8 @@ export const markers = [
 		name: 'Texas State Capitol',
 		points: 100,
 		description: 'Find the best tacos in Austin',
-		completed: false
+		completed: false,
+		image: '../assets/images/Austin_hotel.jpg'
 	},
 	{
 		latitude: 44.342958853945845,
@@ -28,6 +30,7 @@ export const markers = [
 		name: '500 Points waiting for you',
 		points: 500,
 		description: 'Find the best tacos in Austin',
-		completed: false
+		completed: false,
+		image: '../assets/images/react-logo.png'
 	},
 ];

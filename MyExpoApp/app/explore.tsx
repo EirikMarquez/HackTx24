@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Navbar } from '../components/Navbar';
-import { Card } from '../components/card';
+import { Card } from '../components/Card';
 import { markers } from '../assets/markers';
 
 export default function Explore() {
@@ -10,9 +10,11 @@ export default function Explore() {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {markers.map((marker, index) => (
           <Card 
+            image={marker.image}
             key={index}
-            name={marker.name} 
+            name={marker.name}  
             description={marker.description} 
+            points={marker.points}
           />
         ))}
       </ScrollView>
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     alignItems: 'center',
+    width: '100%',
     paddingVertical: 10,
   },
 });
