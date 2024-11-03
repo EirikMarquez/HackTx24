@@ -11,7 +11,8 @@ const INITIAL_REGION = {
 	latitude: 30.2672,
 	longitude: -97.7431,
 	latitudeDelta: 2,
-	longitudeDelta: 2
+	longitudeDelta: 2,
+	zoom: 14
 };
 
 const styles = StyleSheet.create({
