@@ -58,7 +58,7 @@ export default function App() {
 		};
 
 		mapRef.current?.animateToRegion(userLocation);
-		mapRef.current?.animateCamera({ center: userLocation, zoom: 14 }, { duration: 2000 });
+		mapRef.current?.animateCamera({ center: userLocation, zoom: 15 }, { duration: 2000 });
 	};
 
 	const onMarkerSelected = (marker: any) => {

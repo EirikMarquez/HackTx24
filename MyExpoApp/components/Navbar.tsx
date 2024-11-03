@@ -32,7 +32,7 @@ export function Navbar() {
     
     return (
         <View style={styles.navbar}>
-            <TouchableOpacity style={styles.navButton} onPress={() => router.push('/location')}>
+            <TouchableOpacity style={styles.navButton} onPress={() => router.push('/')}>
                 <Text>Location</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.navButton} onPress={() => router.push('/explore')}>

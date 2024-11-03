@@ -27,6 +27,9 @@ export default function Layout() {
 		<Stack>
 			<Stack.Screen name="index" options={{ title: 'Traverse' }} />
 			<Stack.Screen name="profile" options={{ title: 'Profile' }} />
+			<Stack.Screen name="location" options={{ title: 'Location' }} />
+			<Stack.Screen name="explore" options={{ title: 'Explore' }} />
+			<Stack.Screen name="camera" options={{ title: 'Camera' }} />
 		</Stack>
 	);
 }
