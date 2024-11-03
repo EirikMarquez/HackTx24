@@ -5,7 +5,7 @@ export const markers = [
 		longitude: -97.7431,
 		latitudeDelta: 0.01,
 		longitudeDelta: 0.01,
-		name: 'Downtown Austin'
+		name: 'Downtown Austin',
 	},
 	{
 		latitude: 30.2742,

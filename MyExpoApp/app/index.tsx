@@ -4,6 +4,7 @@ import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from 'expo-router';
 import { markers } from '../assets/markers';
 import { Navbar } from '../components/Navbar';
+import { SearchBar } from '../components/SearchBar';
 
 
 const INITIAL_REGION = {
@@ -73,11 +74,14 @@ export default function App() {
 
 	return (
 		<View style={{ flex: 1 }}>
+            
+
+
 			<MapView
 				style={StyleSheet.absoluteFillObject}
 				initialRegion={INITIAL_REGION}
-				showsUserLocation
-				showsMyLocationButton
+				showsUserLocation={true}
+				showsMyLocationButton={true}
 				provider={PROVIDER_GOOGLE}
 				ref={mapRef}
 				onRegionChangeComplete={onRegionChange}
@@ -98,23 +102,8 @@ export default function App() {
 				))}
 			</MapView>
 
-            {/* Navbar */}
-            {/* <Navbar /> */}
-
-            <View style={styles.navbar}>
-            <TouchableOpacity style={styles.navButton}>
-                <Text>Location</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.navButton}>
-                <Text>Explore</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.navButton}>
-                <Text>Camera</Text>
-            </TouchableOpacity>
-                <TouchableOpacity style={styles.navButton}>
-                    <Text>Profile</Text>
-                </TouchableOpacity>
-            </View>
+            <SearchBar />
+            <Navbar />
 
 		</View>
 	);
